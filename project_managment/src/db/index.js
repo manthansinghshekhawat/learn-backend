@@ -7,10 +7,7 @@ const mongoURI =
   process.env.MONGO_URI || "mongodb://localhost:27017/project_management";
 const connectDB = async () => {
   try {
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(mongoURI);
     console.log("MongoDB connected successfully");
   } catch (error) {
     console.error("MongoDB connection error:", error);
@@ -19,4 +16,3 @@ const connectDB = async () => {
 };
 
 export { connectDB };
-
